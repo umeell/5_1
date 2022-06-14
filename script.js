@@ -28,7 +28,15 @@
   })
 
   cw2.addEventListener("click", function () {
-    //TODO implement it
+    var n="";
+      answer.innerHTML = "<h1>Loading</h1>";
+      fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => response.json())
+      .then(body => {
+        n += "UserId:"+JSON.stringify(body.userId)+"</br>"+"Id:"+JSON.stringify(body.id)+"</br>"+"Title:"+JSON.stringify(body.title)+"</br>"+"Bfody:"+JSON.stringify(body.body)+"<hr>" ;
+        
+        answer.innerHTML = n;
+      })
   })
 
   cw3.addEventListener("click", function () {
