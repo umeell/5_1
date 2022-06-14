@@ -15,13 +15,13 @@
   })
 
   cw1.addEventListener("click", function () {
-    var n="";
+      var n="";
+      answer.innerHTML = "<h1>Loading</h1>";
       fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(array => {
         for (var i = 0; i < array.length; i++){
-          n += JSON.stringify(array[i].userId)+"</br>"+JSON.stringify(array[i].id)+"      
-</br>"+JSON.stringify(array[i].title)+"</br>"+JSON.stringify(array[i].body)+"<hr>" ;
+        n += "UserId:"+JSON.stringify(array[i].userId)+"</br>"+"Id:"+JSON.stringify(array[i].id)+"</br>"+"Title:"+JSON.stringify(array[i].title)+"</br>"+"Bfody:"+JSON.stringify(array[i].body)+"<hr>" ;
         }
         answer.innerHTML = n;
       })
