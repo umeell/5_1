@@ -40,7 +40,19 @@
   })
 
   cw3.addEventListener("click", function () {
-    //TODO implement it
-  })
+
+  const options = {
+  method: 'post',
+  headers: {
+    'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+  },
+  body: 'name=Flavio&test=1'
+}
+
+fetch('https://jsonplaceholder.typicode.com/posts', options)
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+})
+  
 
 })();
